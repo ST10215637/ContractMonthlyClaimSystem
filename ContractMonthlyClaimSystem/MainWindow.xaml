@@ -5,21 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContractMonthlyClaimSystem"
         mc:Ignorable="d"
-        Title="Contract Monthly Claim System" Height="450" Width="450">
+        Title="Contract Monthly Claim System" Height="600" Width="800">
     <Grid>
-        <Label Content="Total Hours" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <TextBox Name="txtTotalHours" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,10,0,0" Width="100"/>
+        <!-- Login Section -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0" FontSize="14" Text="Lecturer ID:"/>
+        <TextBox x:Name="txtLecturerId" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,30,20,0" Width="200"/>
 
-       
-        <Label Content="Hourly Rate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
-        <TextBox Name="txtHourlyRate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,40,0,0" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,80,0,0" FontSize="14" Text="Password:"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,80,20,0" Width="200"/>
 
-        
-        <Label Content="Claim Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0"/>
-        <TextBox Name="txtClaimDescription" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,70,0,0" Width="200" Height="60" 
-                 TextWrapping="Wrap" AcceptsReturn="True"/>
+        <!-- Submit Claim Form -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,183,0,0" FontSize="14" Text="Total Hours:"/>
+        <TextBox x:Name="txtTotalHours" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,183,0,0" Width="200"/>
 
-       
-        <Button Content="Submit Claim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0" Width="100" Click="SubmitClaim_Click"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,236,0,0" FontSize="14" Text="Hourly Rate:" RenderTransformOrigin="0.649,3.171"/>
+        <TextBox x:Name="txtHourlyRate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="147,236,0,0" Width="200"/>
+
+        <Label x:Name="lblTotalPayment" Content="Total Payment: R0.00" Margin="440,12,32,486" />
+        <Button Content="Calculate Total" Click="SubmitClaim_Click" Margin="440,98,32,392" />
+
+        <Button Content="HR Dashboard" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+        Margin="417,0,0,200" Width="120" Height="30" Click="OpenHRDashboard_Click"/>
+
+
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0" FontSize="14" Text="Claim Description:"/>
+        <TextBox x:Name="txtClaimDescription" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="147,0,0,0" Width="200"/>
+        <Button x:Name="ReviewClaimsButton" Content="Review Claims" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="277,354,0,0" Width="100" Height="30" Click="ReviewClaimsButton_Click"/>
+
+        <Button Content="Submit Claim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,354,0,0" Width="100" Height="30" Click="SubmitClaim_Click"/>
+
+        <Label Content="Upload File:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,137,0,0" FontSize="14"/>
+        <Button Name="btnUploadFile" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,145,0,0" Width="100" Click="UploadFile_Click" Height="33"/>
+        <TextBlock Name="txtUploadedFile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="277,154,0,0" Width="156" Text="No file selected"/>
+
+
+        <!-- Login Button -->
+        <Button Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,103,0,0" Width="100" Height="30" Click="Login_Click"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0" FontSize="12" Foreground="Red" x:Name="lblError" Visibility="Collapsed" />
     </Grid>
 </Window>

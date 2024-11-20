@@ -1,0 +1,19 @@
+﻿<Window x:Class="ContractMonthlyClaimSystem.ReviewClaimsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContractMonthlyClaimSystem"
+        mc:Ignorable="d"
+       Title="Review Claims" Height="400" Width="600">
+    <Grid>
+        <DataGrid Name="claimsDataGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,40" 
+                  AutoGenerateColumns="True" SelectionMode="Single"/>
+
+        <Button Content="Approve" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,10,0,10" Width="100" Height="30" Click="Approve_Click"/>
+        <Button Content="Reject" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,10,0,10" Width="100" Height="30" Click="Reject_Click"/>
+        <Button Content="View File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="230,10,0,10" Width="100" Height="30" Click="OpenFile_Click"/>
+    
+        
+    </Grid>
+</Window>
